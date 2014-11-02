@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{9d48e45b-872e-4226-938b-ae70fab09579}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MU10513">
+      <UniqueIdentifier>{5e8b3074-b023-4ee0-8fd2-363d7b9f9713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{9202b6ad-0322-4f36-9426-01d52e3dcbba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{330bc89f-e6c8-4c9a-ba89-a7cf8289b567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMStarterCore">
+      <UniqueIdentifier>{4faa7cbb-eb49-4ae4-85cb-00e11f499511}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="MU10513.cpp">
+      <Filter>MU10513</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="CMStarterCore.cpp">
+      <Filter>CMStarterCore</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Main.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="MU10513.h">
+      <Filter>MU10513</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="CMStarterCore.h">
+      <Filter>CMStarterCore</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
