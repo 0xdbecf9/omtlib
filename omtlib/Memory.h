@@ -16,5 +16,6 @@ public:
 	void static SetRRetn(DWORD dwOffset);
 	void static SetByte(DWORD dwOffset, BYTE btValue);
 	void static SetBytes(DWORD dwOffset, LPBYTE lpbtValues);
+	void static WriteChars(DWORD dwOffset, char* sChars);
 
 };

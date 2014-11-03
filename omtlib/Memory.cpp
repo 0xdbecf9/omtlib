@@ -59,3 +59,10 @@ void Memory::SetBytes(DWORD dwOffset, LPBYTE lpbtValues)
 
 	Log::msg("> Bytes set at 0x%p size: %d", dwOffset, sizeof(lpbtValues));
 }
+
+void Memory::WriteChars(DWORD dwOffset, char* sChars)
+{
+	strcpy((char*)dwOffset, sChars);
+
+	Log::msg("> Chars write at 0x%p chars: %s", dwOffset, sChars);
+}

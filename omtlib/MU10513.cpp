@@ -15,6 +15,9 @@ void MU10513::run()
 	{
 		Log::alloc();
 		Log::msg("### Global Mu Online 1.05.13 Debug Mode ###\n");
+
+		// Window manipulation
+		Memory::SetByte(0x004D8116, 0xEB); // Always in window, not tested
 	}
 
 	CMStarterCore cmstartercore;
@@ -36,6 +39,9 @@ bool MU10513::isValid()
 
 void MU10513::fixIt()
 {
+	// FIXING: Connect Server addr
+	Memory::WriteChars(0x011AFAF2, CONNECTSERVERADDR);
+
 	// FIXING: Mu.exe
 	BYTE bytes_jump[] = {0xE9, 0x8B, 0x00, 0x00, 0x00, 0x90};
 	Memory::SetBytes(0x004D908A, bytes_jump);
@@ -58,6 +64,7 @@ void MU10513::fixIt()
 	Memory::SetNop(0x004D76FC, 5); // nProtect Tick
 
 	// FIXING: WZRegPII.dll load
+	//Memory::WriteChars(0x01038448, "WZCegPII.dll");
 	//Memory::HookThis(0x006D9D57, (DWORD)&(HOOKS10513::LoadWZRegPII));
 	//Memory::HookThis(0x004D7873, (DWORD)&(HOOKS10513::LoginRequest));
 }
@@ -75,8 +82,46 @@ char LoadWZRegPII(void *ptr)
 int WINAPI LoginRequest(void *ptr, void *a2, void *Src)
 {
 	std::cout << "[LoginRequest] # Handled" << std::endl;
-	std::cout << "[LoginReques]t # a2: " << (char*)a2 << " Src: " << (char*)Src << std::endl;
+	std::cout << "[LoginRequest] # a2: " << (char*)a2 << " Src: " << (char*)Src << std::endl;
 	return 3; // 1 - OK, 2 - Bad userName, 3 - Bad userPassword, 5 - Connection Error
 }
 
 } // END NAMESPACE
+
+int AcquireBasicHWInfo(int a1)
+{
+	Log::msg("[WZRegPII.dll] Called AcquireBasicHWInfo # a1: %d return: 40000", a1);
+	return 40000;
+}
+
+int AcquireBasicOSInfo(int a1)
+{
+	Log::msg("[WZRegPII.dll] Called AcquireBasicOSInfo # a1: %d return: 40000", a1);
+	return 40000;
+}
+
+LPCWSTR AcquirePlain()
+{
+	Log::msg("[WZRegPII.dll] Called AcquirePlain # return: LPCWSTR");
+
+	LPCWSTR result;
+	return result;
+}
+
+int AcquireUMID(int a1)
+{
+	Log::msg("[WZRegPII.dll] Called AcquireUMID # a1: %d return: 40000", a1);
+	return 40000;
+}
+
+int ExtractPII(int a1)
+{
+	Log::msg("[WZRegPII.dll] Called ExtractPII # a1: %d return: 40000", a1);
+	return 40000;
+}
+
+int RegistPII(int a1)
+{
+	Log::msg("[WZRegPII.dll] Called RegistPII # a1: %d return: 40000", a1);
+	return 40000;
+}
